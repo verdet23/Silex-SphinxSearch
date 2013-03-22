@@ -4,10 +4,12 @@ namespace SilexSphinxsearch;
 use Silex\Application;
 use Silex\ServiceProviderInterface;
 
+use Search\SphinxsearchBundle\Services\Search\Sphinxsearch;
+
 /**
  * Sphinx search extension for Silex
  */
-class SphinxsearchExtension extends ServiceProviderInterface
+class SphinxsearchExtension implements ServiceProviderInterface
 {
     /**
      * @param \Silex\Application $app
@@ -22,6 +24,12 @@ class SphinxsearchExtension extends ServiceProviderInterface
      */
     public function register(Application $app)
     {
+        $app['sphinxsearch'] = $app->share(function ($app) {
+                $options = $app['sphinxsearch.options'];
 
+                $sphinxSearch = new Sphinxsearch($options['searchd']['host'], $options['searchd']['port'], $options['searchd']['socket'], $options['indexes']);
+
+                return $sphinxSearch;
+            });
     }
 }
