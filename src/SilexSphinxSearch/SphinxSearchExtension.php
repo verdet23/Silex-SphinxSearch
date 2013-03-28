@@ -1,10 +1,10 @@
 <?php
-namespace SilexSphinxsearch;
+namespace SilexSphinxSearch;
 
 use Silex\Application;
 use Silex\ServiceProviderInterface;
 
-use Search\SphinxsearchBundle\Services\Search\Sphinxsearch;
+use Search\SphinxSearchBundle\Services\Search\Sphinxsearch;
 
 /**
  * Sphinx search extension for Silex

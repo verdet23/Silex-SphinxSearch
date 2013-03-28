@@ -1,6 +1,6 @@
 
 {
-    "name": "verdet23/silex-sphinxsearch",
+    "name": "verdet/silex-sphinxsearch",
     "description": "Sphinx search extension for Silex",
     "keywords": ["silex", "sphinx", "search"],
     "homepage": "https://github.com/verdet23/Silex-SphinxSearch",
@@ -15,14 +15,14 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "search/sphinxsearch-bundle": ">=1.2.2"
+        "verdet/sphinxsearch-bundle": "dev-master"
     },
     "require-dev": {
         "silex/silex": "*"
     },
     "autoload": {
         "psr-0": {
-            "SilexSphinxsearch": "src"
+            "SilexSphinxSearch": "src"
         }
     },
     "minimum-stability": "dev"
